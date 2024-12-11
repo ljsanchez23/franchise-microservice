@@ -15,8 +15,8 @@ Sigue estos pasos para ejecutar y probar la aplicación en tu entorno local.
 Antes de comenzar, asegúrate de tener los siguientes componentes instalados y configurados:
 - **Java:** JDK 17 o superior.
 - **Docker:** Última versión instalada.
-- **Maven o Gradle:** Para compilar el proyecto.
-- **Base de Datos:** Un RDS MySQL o instancia local configurada con los datos requeridos.
+- **Gradle:** Para compilar el proyecto.
+- **Base de Datos:** RDS.
 
 ---
 
