@@ -66,14 +66,20 @@ Al momento de carga del repositorio hay oportunidades de mejora que se dejan por
 debido al tiempo establecido para el reto.
 
 Se ajusta el DatabaseCredentialsService para facilitar la ejecucion de la app desde cualquier equipo en local,
-esto sera actualizado en caso de completar el despliegue a ECS para que se conecte mediante el Default
+esto sera actualizado en caso de completar el despliegue a ECS para que se conecte mediante el Container
 credentials provider.
 
-__________
-Se logro desplegar el servicio en ECS y acceder a los endpoints mediante la IP publica de la tarea, se estuvo trabajando en cambios para exponer los endpoints mediante un ALB, durante la configuracion del ALB se modifico la estructura del primer despliegue, en este momento la aplicacion no es accesible desde cloud y es necesario descargar la version anterior de la rama main para poder ejecutarlo en local.
+________________________
+Se logro completar la puesta en marcha del ALB, puede acceder al recurso a traves del DNS "nequichallenge-alb-289054499.us-east-1.elb.amazonaws.com"
 
-Los recursos en AWS permaneceran creados en caso de que se reciba la oportunidad de ser socializados. 
+Oportunidades de mejora: Cierre de puertos y limitar algunos permisos en los roles de ejecucion en AWS - se deja fuera del alcance debido al tiempo del reto.
 
-IP public asignada en la tarea para acceder a los endpoints (http://44.223.28.18/) 
-
-Desarrollo y puesta en marcha del ALB - En proceso 
+Servicios utilizados en el ejercicio:
+1. RDS
+2. ECR
+3. ECS
+4. VPC
+5. EC2
+6. CloudWatch
+7. IAM
+8. SecretsManager
