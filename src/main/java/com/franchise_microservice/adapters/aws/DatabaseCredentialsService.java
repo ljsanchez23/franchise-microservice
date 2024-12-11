@@ -1,5 +1,6 @@
 package com.franchise_microservice.adapters.aws;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.franchise_microservice.adapters.aws.util.DatabaseCredentials;
 import com.franchise_microservice.adapters.aws.util.exception.DatabaseCredentialsException;
@@ -18,16 +19,24 @@ public class DatabaseCredentialsService {
 
     public DatabaseCredentials getDatabaseCredentials() {
         try {
+            String secretName = AdaptersConstants.SECRET_NAME;
+
+
+
+
+            String secretString = secretsManagerService.getSecret(secretName);
+            JsonNode jsonNode = objectMapper.readTree(secretString);
             return new DatabaseCredentials(
-                    "adminaws",
-                    "adminaws",
-                    "myfirstdb.cf44wmsoe2qr.us-east-1.rds.amazonaws.com",
-                    "3306",
-                    "myfirstdb"
+                    jsonNode.get(AdaptersConstants.USERNAME_FROM_SECRET).asText(),
+                    jsonNode.get(AdaptersConstants.PASSWORD_FROM_SECRET).asText(),
+                    jsonNode.get(AdaptersConstants.HOST_FROM_SECRET).asText(),
+                    jsonNode.get(AdaptersConstants.PORT_FROM_SECRET).asText(),
+                    jsonNode.get(AdaptersConstants.DB_NAME_FROM_SECRET).asText()
             );
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
-            throw new DatabaseCredentialsException(AdaptersConstants.PROBLEM_CONNECTING_WITH_RDS_DATABASE);
+            return null;
         }
     }
 }

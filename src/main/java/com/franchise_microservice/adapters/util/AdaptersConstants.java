@@ -1,8 +1,6 @@
 package com.franchise_microservice.adapters.util;
 
 public class AdaptersConstants {
-    public static final String PROBLEM_CONNECTING_WITH_RDS_DATABASE = "There was an unexpected problem with the" +
-            "database connection";
     public static final String USERNAME_FROM_SECRET = "username";
     public static final String PASSWORD_FROM_SECRET = "password";
     public static final String HOST_FROM_SECRET = "host";

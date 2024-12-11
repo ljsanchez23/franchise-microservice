@@ -1,8 +1,7 @@
 package com.franchise_microservice.adapters.aws;
 
 import org.springframework.stereotype.Service;
-import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.auth.credentials.ContainerCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.secretsmanager.SecretsManagerClient;
 import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueRequest;
@@ -15,7 +14,7 @@ public class SecretsManagerService {
     public SecretsManagerService() {
         this.secretsManagerClient = SecretsManagerClient.builder()
                 .region(Region.US_EAST_1)
-                .credentialsProvider(DefaultCredentialsProvider.create())
+                .credentialsProvider(ContainerCredentialsProvider.builder().build())
                 .build();
     }
 
