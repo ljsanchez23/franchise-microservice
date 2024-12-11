@@ -25,7 +25,7 @@ Antes de comenzar, asegúrate de tener los siguientes componentes instalados y c
 1. **Clonar el Repositorio**
    Descarga el proyecto desde el repositorio GitHub:
    ```bash
-   git clone https://github.com/tu-repo/nequi-backend-challenge.git
+   git clone https://github.com/ljsanchez23/franchise-microservice.git
    
 2. **Construir la imagen de Docker**
    Usa el Dockerfile incluido en el proyecto para crear la imagen:
