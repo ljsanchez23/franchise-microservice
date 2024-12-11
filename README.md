@@ -68,3 +68,12 @@ debido al tiempo establecido para el reto.
 Se ajusta el DatabaseCredentialsService para facilitar la ejecucion de la app desde cualquier equipo en local,
 esto sera actualizado en caso de completar el despliegue a ECS para que se conecte mediante el Default
 credentials provider.
+
+__________
+Se logro desplegar el servicio en ECS y acceder a los endpoints mediante la IP publica de la tarea, se estuvo trabajando en cambios para exponer los endpoints mediante un ALB, durante la configuracion del ALB se modifico la estructura del primer despliegue, en este momento la aplicacion no es accesible desde cloud y es necesario descargar la version anterior de la rama main para poder ejecutarlo en local.
+
+Los recursos en AWS permaneceran creados en caso de que se reciba la oportunidad de ser socializados. 
+
+IP public asignada en la tarea para acceder a los endpoints (http://44.223.28.18/) 
+
+Desarrollo y puesta en marcha del ALB - En proceso 
