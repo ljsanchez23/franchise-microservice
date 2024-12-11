@@ -32,4 +32,5 @@ public class AdaptersConstants {
     public static final String DELETE_PRODUCT_FROM_BRANCH_ENDPOINT = "/delete-product";
     public static final String GET_HIGHEST_STOCK_ENDPOINT = "/highest-stock";
     public static final String UPDATE_STOCK_ENDPOINT = "/update-stock";
+    public static final String HEALTH_CONTROLLER_URL = "/health";
 }
